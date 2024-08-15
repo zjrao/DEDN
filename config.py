@@ -1,0 +1,30 @@
+import argparse
+
+def get_args():
+    parser = argparse.ArgumentParser(description="Script to launch training",
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("--batch_size", type=int, default=50)
+    parser.add_argument("--epochs", type=int, default=80)
+    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--is_balance", action="store_true", help='balance sample for dataset')
+    parser.add_argument("--lamb", type=float, default=0., help='trade-off parameter for calibration loss')
+    parser.add_argument("--is_scale", action="store_true")
+    parser.add_argument("--dim_f", type=int, default=2048, help='dimension of channel')
+    parser.add_argument("--dim_v", type=int, default=300, help='dimension of attribute')
+    parser.add_argument("--dim_r", type=int, default=14, help='dimension of region')
+    parser.add_argument("--trainable_w2v", action="store_true", help='set V to trainable')
+    parser.add_argument("--is_bias", action="store_true", help='set whether marginal')
+    parser.add_argument("--bias", type=int, default=1, help='marginal')
+    parser.add_argument("--mal", action="store_true", help='use marginal-aware loss')
+    parser.add_argument("--normalize_V", action="store_true", help='normalize V')
+    parser.add_argument("--normalize_F", action="store_true", help='normalize F')
+    parser.add_argument("--lr", type=float, default=0.0001, help='learning rate')
+    parser.add_argument("--weight_decay", type=float, default=0.0001)
+    parser.add_argument("--momentum", type=float, default=0.9)
+    parser.add_argument("--p_ce", type=float, default=0.1, help='coefficient of distillation loss')
+    parser.add_argument("--p_crc", type=float, default=0.001, help='coefficient of align loss')
+    parser.add_argument("--c_mix", type=float, default=0.9, help='coefficient of mix channel and region attention')
+    parser.add_argument("--e_mix", type=float, default=0.5, help='coefficient of mix output of expert1 and expert2')
+    parser.add_argument("--hidd_f", type=int, default=256, help='hidden dim, just for SUN')
+
+    return parser.parse_args()
