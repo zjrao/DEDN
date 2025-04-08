@@ -44,10 +44,11 @@ sh script.sh
 If this work is helpful for you, please cite our paper.
 
 ```
-@article{rao2024dual,
-  title={Dual Expert Distillation Network for Generalized Zero-Shot Learning},
+@inproceedings{rao2024dual,
+  title={Dual expert distillation network for generalized zero-shot learning},
   author={Rao, Zhijie and Guo, Jingcai and Lu, Xiaocheng and Liang, Jingming and Zhang, Jie and Wang, Haozhao and Wei, Kang and Cao, Xiaofeng},
-  journal={arXiv preprint arXiv:2404.16348},
+  booktitle={Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence},
+  pages={4833--4841},
   year={2024}
 }
 ```
